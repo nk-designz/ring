@@ -50,6 +50,9 @@ func (ring *Ring) Push(nx *Node) *Ring {
 		ring.Node().Prior(),
 		nx.Fit(
 			ring.Node(), ring.Node().Next())).Ring()
+	ring.Node().Next().Next().Fit(
+		ring.Node().Next(),
+		ring.Node().Next().Next().Next())
 	return ring
 }
 
